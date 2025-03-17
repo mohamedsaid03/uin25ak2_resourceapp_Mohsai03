@@ -1,0 +1,2 @@
+mkdir src/components
+touch src/components/Nav.jsx src/components/PageTitle.jsx src/components/Layout.jsx src/components/Resources.jsx
