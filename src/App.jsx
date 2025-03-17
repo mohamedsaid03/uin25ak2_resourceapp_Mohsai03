@@ -1,38 +1,60 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Resources from "./Resources";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import PageTitle from "./components/PageTitle";
+import Resources from "./components/Resources";
 
 function App() {
   return (
     <Router>
-      <main>
-        {/* Navigasjonsknapper */}
-        <nav>
-          <button>
-            <Link to="/html">HTML</Link>
-          </button>
-          <button>
-            <Link to="/css">CSS</Link>
-          </button>
-          <button>
-            <Link to="/javascript">JavaScript</Link>
-          </button>
-          <button>
-            <Link to="/react">React</Link>
-          </button>
-          <button>
-            <Link to="/sanity">Sanity and Headless CMS</Link>
-          </button>
-        </nav>
-
-        {/* Routing til sidene */}
+      <Layout>
         <Routes>
-          <Route path="/html" element={<Resources category="html" />} />
-          <Route path="/css" element={<Resources category="css" />} />
-          <Route path="/javascript" element={<Resources category="javascript" />} />
-          <Route path="/react" element={<Resources category="react" />} />
-          <Route path="/sanity" element={<Resources category="headless-cms" />} />
+          <Route
+            path="/html"
+            element={
+              <>
+                <PageTitle title="HTML" />
+                <Resources category="html" />
+              </>
+            }
+          />
+          <Route
+            path="/css"
+            element={
+              <>
+                <PageTitle title="CSS" />
+                <Resources category="css" />
+              </>
+            }
+          />
+          <Route
+            path="/javascript"
+            element={
+              <>
+                <PageTitle title="JavaScript" />
+                <Resources category="javascript" />
+              </>
+            }
+          />
+          <Route
+            path="/react"
+            element={
+              <>
+                <PageTitle title="React" />
+                <Resources category="react" />
+              </>
+            }
+          />
+          <Route
+            path="/sanity"
+            element={
+              <>
+                <PageTitle title="Sanity and Headless CMS" />
+                <Resources category="headless-cms" />
+              </>
+            }
+          />
         </Routes>
-      </main>
+      </Layout>
     </Router>
   );
 }
