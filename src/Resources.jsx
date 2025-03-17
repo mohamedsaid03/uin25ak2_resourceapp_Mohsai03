@@ -1,4 +1,4 @@
-import ressurser from "../ressurser";
+import ressurser from "./ressurser";
 
 function Resources({ category }) {
   const filtered = ressurser.filter((res) => res.category === category);
